@@ -18,7 +18,7 @@ function Form() {
       }
     );
     // window.location.reload(false)
-    console.log(response)
+   alert(response.data)
     setEmail('')
     setNumber("")
     setName('')
