@@ -5,14 +5,14 @@ const form =(req,res)=>{
     
     if(!name) throw "Please Enter name";
     if(!email) throw "Please Enter email";
-    if(!number) throw "Please Enter message";
+    if(!number) throw "Please Enter number";
 
     const data = new Cloud({
         name,email,number
     });
 
     data.save();
-    res.status(201).json(data);
+    res.status(201).json("Infromation save successfully");
 }
 
 export default form;

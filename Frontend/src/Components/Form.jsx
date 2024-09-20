@@ -17,13 +17,15 @@ function Form() {
         withCredentials:true
       }
     );
-    window.location.reload(false)
-    }catch(err){
-      setError(err.response.data.message);
-    }
+    // window.location.reload(false)
+    console.log(response)
     setEmail('')
     setNumber("")
     setName('')
+    }catch(err){
+      alert(err.response.data.message);
+    }
+    
   }
 
   return (
@@ -46,7 +48,6 @@ function Form() {
             value={name}
             className="border-2 rounded-md px-4 py-1 outline-none"
             onChange={e => setName(e.target.value)}
-            required
           />
         </div>
         <div className="flex flex-col gap-1 w-full ">
@@ -59,7 +60,6 @@ function Form() {
             value={email}
             className="border-2 rounded-md px-4 py-1 outline-none"
             onChange={e=> setEmail(e.target.value)}
-            required
           />
         </div>
         <div className="flex flex-col gap-1 w-full ">
@@ -73,7 +73,6 @@ function Form() {
             value={number}
             className="border-2 rounded-md px-4 py-1 outline-none"
             onChange={e=> setNumber(e.target.value)}
-            required
           />
         </div>
         <button type="submit" className="bg-sky-500 text-white text-2xl font-serif w-[50%] py-3 rounded-md active:scale-90 outline-none">
